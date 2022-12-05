@@ -26,10 +26,12 @@
                   Categorias
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{% url 'produtos_list'%}">Notebooks</a></li>
-                  <li><a class="dropdown-item" href="{% url 'produtos_list'%}">Celulares</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="{% url 'produtos_list'%}">Acessórios</a></li>
+                  {% for categoria in categorias %}
+
+                    <li><a class="dropdown-item" href='{{ categoria.get_absolute_url }}'>{{ categoria.name }}</a></li>
+                    <!-- <li><hr class="dropdown-divider"></li> -->
+
+                  {% endfor %}
                 </ul>
               </li>
               <li class="nav-item">

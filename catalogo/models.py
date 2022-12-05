@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Categoria(models.Model):
@@ -25,10 +26,17 @@ class Categoria(models.Model):
         auto_now=True,
     )
 
-    class Meta:
-        verbose_name = 'Categoria',
-        verbose_name_plural = 'Categorias',
-        ordering = ['name']
+    def __str__(self):
+        return self.name
+
+
+    def get_absolute_url(self):
+        return  reverse('catalogo:categoria', kwargs={'slug':self.slug})
+
+    # class Meta:
+    #     verbose_name = 'Categoria',
+    #     verbose_name_plural = 'Categorias',
+    #     ordering = ['name']
 
 
 class Produto(models.Model):
@@ -50,7 +58,6 @@ class Produto(models.Model):
         on_delete=models.DO_NOTHING,
         verbose_name='Categoria: ',
         blank=True,
-
     )
 
     descricao = models.TextField(
@@ -75,7 +82,10 @@ class Produto(models.Model):
         auto_now=True,
     )
 
-    class Meta:
-        verbose_name = 'Produto',
-        verbose_name_plural = 'Produtos',
-        ordering = ['name']
+    def __str__(self):
+        return self.name
+
+    # class Meta:
+    #     verbose_name = 'Produto',
+    #     verbose_name_plural = 'Produtos',
+    #     ordering = ['name']
