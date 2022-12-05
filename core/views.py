@@ -8,3 +8,12 @@ def index(request):
         'texts': texts
     }
     return render(request,'index.html', context)
+
+def contato(request):
+    return render (request, 'contato.html')
+
+def produtos_list(request):
+    return render (request, 'produtos_list.html')
+
+def produto(request):
+    return render (request, 'produtos.html')
