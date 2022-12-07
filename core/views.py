@@ -16,5 +16,3 @@ def index(request):
 def contato(request):
     return render (request, 'contato.html')
 
-def produto(request):
-    return render (request, 'produtos.html')

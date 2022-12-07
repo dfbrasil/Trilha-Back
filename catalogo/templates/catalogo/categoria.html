@@ -16,13 +16,13 @@
     {% for produto in produtos_list %}
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <a href="#">
-                    <img src="http://placehold.it/350x250" alt="" />
+                <a href="{{ produto.get_absolute_url }}">
+                    <img src="https://via.placeholder.com/350x250/?text=Imagem Teste" alt="" />
                 </a>
                 <div class="caption">
                     <h3>{{ produto }}</h3>
                         {{ produto.descricao|linebreaks }}
-                    <p><a href="#" class="btn btn-success" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                    <p><a href="{{ produto.get_absolute_url }}" class="btn btn-success" role="button">Comprar</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
                 </div>
             </div>
         </div>

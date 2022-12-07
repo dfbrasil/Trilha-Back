@@ -89,3 +89,6 @@ class Produto(models.Model):
     #     verbose_name = 'Produto',
     #     verbose_name_plural = 'Produtos',
     #     ordering = ['name']
+
+    def get_absolute_url(self):
+        return  reverse('catalogo:produto', kwargs={'slug':self.slug})

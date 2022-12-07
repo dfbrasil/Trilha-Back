@@ -15,13 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from core.views import index, contato, produto
-
+from core.views import index, contato
 
 urlpatterns = [
     path('', index, name='index'),
     path('contato/', contato, name='contato'),
-    path('produto/', produto, name='produto'),
-    path('produtos/', include(('catalogo.urls','catalogo'), namespace='catalogo')),
+    path('catalogo/', include(('catalogo.urls','catalogo'), namespace='catalogo')),
+    path('produtos/', include('catalogo.urls')),
     path('admin/', admin.site.urls),
 ]

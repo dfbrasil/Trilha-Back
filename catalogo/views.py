@@ -15,3 +15,11 @@ def categoria(request, slug):
         'produtos_list' : Produto.objects.filter(categoria=categoria),
     }
     return render(request, 'catalogo/categoria.html', context)
+
+
+def produto(request, slug):
+    produto = Produto.objects.get(slug=slug)
+    context = {
+        'produto' : produto
+    }
+    return render(request, 'catalogo/produto.html', context)
