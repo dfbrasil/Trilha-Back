@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ufxjr5=a^ikylvaa62s80i(%$yd0fvnz#4_sycc!5xik5+sli4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1' ]
 
 
 # Application definition
@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    #libs
+    'widget_tweaks',
+    #apps
     'core',
     'catalogo',
 ]
@@ -126,3 +128,12 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#email
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = 'login'
+EMAIL_HOST_PASSWORD = 'senha'
+DEFAULT_FROM_EMAIL='teste@loja.com'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
