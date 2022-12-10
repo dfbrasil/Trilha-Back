@@ -4,19 +4,16 @@ from django.http import HttpResponse
 from catalogo.models import Categoria
 from .forms import ContatoForm
 
+from django.views.generic import View, TemplateView
+
 from django.core.mail import send_mail
 
+class IndexView(TemplateView):
 
+    template_name = 'index.html'
 
-def index(request):
-   
-    texts =['TEste de texto','teste2 de texto']
-    context = {
-        'title': 'página trilha_back',
-        'texts': texts,
-        
-    }
-    return render(request,'index.html', context)
+index = IndexView.as_view()
+
 
 def contato(request):
     sucesso = False

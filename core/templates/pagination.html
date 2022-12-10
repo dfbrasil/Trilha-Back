@@ -1,0 +1,8 @@
+
+<nav>
+    <ul class="pagination justify-content-center">
+        {% for page in paginator.page_range %}
+            <li class="page-item"> <a class="page-link" href="?page={{ page }} {{ getvars }}"></a>{{ page }}</li>
+        {% endfor %}   
+    </ul>
+</nav>
