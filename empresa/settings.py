@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #libs
     'widget_tweaks',
+    'bootstrapform',
+    
+    
     #apps
     'core',
     'catalogo',
@@ -59,7 +62,7 @@ ROOT_URLCONF = 'empresa.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -137,3 +140,7 @@ EMAIL_HOST_PASSWORD = 'senha'
 DEFAULT_FROM_EMAIL='teste@loja.com'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+LOGIN_URL = '/login/'
+
+LOGIN_REDIRECT_URL = 'index'

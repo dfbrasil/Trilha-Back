@@ -1,16 +1,35 @@
-{% extends 'base.html' %}
+<!-- {% extends 'base.html' %} -->
 
 {% block container%}
 <div class="jumbotron page-header">
 		  <h1>{{ title|capfirst }}</h1>
-		  <p>
+		  <!-- <p>
             {% for item in texts %}
                 {{ item }}
                 {% if not forloop.last %}
                 ,
                 {% endif %}
             {% endfor %}
-          </p>
+          </p> -->
+
+          <div class="row">
+            <div class="col">
+    
+            </div>
+    
+            <div class="col-6">
+                <h1>Seja bem vindo</h1>
+            </div>
+            
+            <div class="col-sm">
+                {% if user.is_authenticated %}
+                    <p>Ola {{ user.username }}</p>
+                    <a href="{% url 'logout' %}">Sair</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-info">Entrar</a>
+                {% endif %}
+            </div>
+        </div>
 		  <p><a class="btn btn-primary">Saiba mais</a></p>
 </div>
 {% endblock %}
